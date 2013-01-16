@@ -1,3 +1,9 @@
+/*
+v1.0
+COUNTDOWN ARDUINO CON LCD Y DOS BOTONES
+Ejercicio simple de como hacer un chronometro con dos botones, uno para agregar de 30 en 30 minutos y otro para comenzar.
+*/
+
 #include <LiquidCrystal.h>
 
 int led = 13;
@@ -32,17 +38,14 @@ void setup () {
  
     pinMode(BEEP_PIN, OUTPUT);   
     
-//    lcd.print("RESORTES Y ESPIRALES");
-
-                //wait...
-    lcd.clear();                    //clear the LCD during setup
-    lcd.begin(16,2);                //define the columns (16) and rows (2)
-    lcd.setCursor(4,0);            //move the cursor to 2nd line, 4th column
-    lcd.print("RESORTES");          //print...
-    lcd.setCursor(2,1);            //move the cursor to 2nd line, 4th column
-    lcd.print("& ESPIRALES");          //print...
+    lcd.clear();             
+    lcd.begin(16,2);         
+    lcd.setCursor(4,0);      
+    lcd.print("RESORTES");   
+    lcd.setCursor(2,1);      
+    lcd.print("& ESPIRALES");
     delay(2000);
-    lcd.clear();                    //clear the LCD during setup
+    lcd.clear();             
     
 }
  
@@ -87,23 +90,23 @@ void loop () {
        }     
        bx = bx +1;
        Serial.println(contador);
-       lcd.setCursor(2,0);            //move the cursor to 2nd line, 4th column
+       lcd.setCursor(2,0);     
        //lcd.autoscroll();
-       lcd.print("TIEMPO TOTAL");          //print...
-       lcd.setCursor(4,1);            //move the cursor to 2nd line, 4th column
+       lcd.print("TIEMPO TOTAL");
+       lcd.setCursor(4,1);       
 
        m=contador/60;
        h=m/60;
        m2=m%60;
        s2=contador%60%60%60;
        if(h < 10) lcd.print("0"); 
-       lcd.print(h);          //print...
-       lcd.print(":");          //print...
+       lcd.print(h);         
+       lcd.print(":");       
        if(m2 < 10) lcd.print("0"); 
-       lcd.print(m2);          //print...
-       lcd.print(":");          //print...
+       lcd.print(m2);        
+       lcd.print(":");       
        if(s2 < 10) lcd.print("0"); 
-       lcd.print(s2);          //print...
+       lcd.print(s2);        
       
        break;
      case 2:
@@ -114,24 +117,24 @@ void loop () {
      
        contador = contador -1;
        Serial.println(contador);
-       lcd.setCursor(0,1);            //move the cursor to 2nd line, 4th column
+       lcd.setCursor(0,1);       
 
-       lcd.setCursor(4,0);            //move the cursor to 2nd line, 4th column
-       lcd.print("RESTANTE");          //print...
-       lcd.setCursor(4,1);            //move the cursor to 2nd line, 4th column
+       lcd.setCursor(4,0);       
+       lcd.print("RESTANTE");    
+       lcd.setCursor(4,1);       
        
        m=contador/60;
        h=m/60;
        m2=m%60;
        s2=contador%60%60%60;
        if(h < 10) lcd.print("0"); 
-       lcd.print(h);          //print...
-       lcd.print(":");          //print...
+       lcd.print(h);         
+       lcd.print(":");       
        if(m2 < 10) lcd.print("0"); 
-       lcd.print(m2);          //print...
-       lcd.print(":");          //print...
+       lcd.print(m2);        
+       lcd.print(":");       
        if(s2 < 10) lcd.print("0"); 
-       lcd.print(s2);          //print...
+       lcd.print(s2);        
        
        
        delay(1000);         
@@ -147,18 +150,18 @@ void loop () {
        delay(750);  
        */
        bx = 0;
-       lcd.setCursor(3,0);            //move the cursor to 2nd line, 4th column
-       lcd.print("COMPLETADO");          //print...
-       lcd.setCursor(0,1);            //move the cursor to 2nd line, 4th column
-       lcd.print("PRESIONE INICIO");          //print...       
+       lcd.setCursor(3,0);          
+       lcd.print("COMPLETADO");     
+       lcd.setCursor(0,1);          
+       lcd.print("PRESIONE INICIO"); 
        
-      digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-      delay(20);               // wait for a second
-      digitalWrite(led, LOW);   // turn the LED on (HIGH is the voltage level)
-      delay(20);               // wait for a second       
+      digitalWrite(led, HIGH);  
+      delay(20);              
+      digitalWrite(led, LOW); 
+      delay(20);              
        break;
     default:
-      //lcd.print("seleccione");          //print...
+      //lcd.print("seleccione"); 
  
 //    break;
       Serial.println("");
