@@ -11,7 +11,7 @@
 //
 // Written by Martijn The -> post [at] martijnthe.nl
 // Tutorial: http://www.martijnthe.nl/optimouse/
-// Based on the sketches by Beno‚Äùt Rousseau
+// Based on the sketches by Benoît Rousseau
 
 #include "PAN3101.h"
 // #include "ADNS2051.h"
@@ -33,7 +33,7 @@ int c = 0;                                // Counter variable for coordinate rep
 
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(38400);
   Optical1.begin();                       // Resync (not really necessary?)
 }
 
